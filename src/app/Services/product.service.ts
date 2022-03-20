@@ -5,16 +5,15 @@ import { ProductCardModel } from '../Models/product-card.model';
 
 @Injectable()
 export class ProductService {
-    products: any = [];
+    products: ProductCardModel[] = [];
 
     constructor(private http: HttpClient) {}
 
-    getProducts() : Observable<any> {
-        console.log("Started call")
-        this.http.get("https://localhost:7087/Products")
-        .subscribe(response =>
-            this.products = response );
+    getProducts() : Observable<ProductCardModel[]> {
+        return this.http.get<ProductCardModel[]>("https://localhost:7087/Products");
+    }
 
-        return this.products;
+    getProductById(id: number) : Observable<ProductCardModel> {
+        return this.http.get<ProductCardModel>(`https://localhost:7087/Products/${id}`);
     }
 }

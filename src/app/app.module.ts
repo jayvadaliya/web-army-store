@@ -8,12 +8,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductService } from './Services/product.service';
 import { ProductCardMapper } from './Mapper/product-card.mapper';
 import { ProductComponent } from './components/product/product.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ProductComponent
+    ProductComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

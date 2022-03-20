@@ -6,14 +6,18 @@ import { ProductCardModel } from '../Models/product-card.model';
 @Injectable()
 export class ProductService {
     products: ProductCardModel[] = [];
+    url: string = "https://localhost:7087/Products";
 
     constructor(private http: HttpClient) {}
 
-    getProducts() : Observable<ProductCardModel[]> {
-        return this.http.get<ProductCardModel[]>("https://localhost:7087/Products");
+    getProducts(searchTerm: string) : Observable<ProductCardModel[]> {
+        return this.http.get<ProductCardModel[]>(this.url, {
+            params: {
+                searchTerm: searchTerm,
+            }});
     }
 
     getProductById(id: number) : Observable<ProductCardModel> {
-        return this.http.get<ProductCardModel>(`https://localhost:7087/Products/${id}`);
+        return this.http.get<ProductCardModel>(this.url + `/${id}`);
     }
 }

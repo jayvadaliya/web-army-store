@@ -19,3 +19,7 @@
         transform: scale(1.1);
         background-color: rgb(129, 143, 221);
     }
+
+.search-bar {
+    margin: 10px 0px;
+}

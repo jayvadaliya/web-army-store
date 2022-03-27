@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductCardModel } from '../../Models/product-card.model';
 import { ProductService } from '../../Services/product.service';
@@ -9,6 +9,8 @@ import { ProductService } from '../../Services/product.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  searchTerm = "";
 
   public products: ProductCardModel[] = [];
   constructor(
@@ -23,5 +25,12 @@ export class DashboardComponent implements OnInit {
   showDetails(id: number)
   {
     this.router.navigate([`/product/${id}`]);
+  }
+
+  searchProduct()
+  {
+    this.products = [];
+    this.productService.getProducts(this.searchTerm)
+    .subscribe(response => this.products = response);
   }
 }

@@ -11,13 +11,15 @@ import { ProductCardMapper } from './Mapper/product-card.mapper';
 import { ProductComponent } from './components/product/product.component';
 import { AboutComponent } from './components/about/about.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FeatureSliderComponent } from './components/dashboard/feature-slider/feature-slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ProductComponent,
-    AboutComponent
+    AboutComponent,
+    FeatureSliderComponent
   ],
   imports: [
     BrowserModule,

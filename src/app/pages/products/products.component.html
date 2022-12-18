@@ -1,0 +1,64 @@
+<c-row ngPreserveWhitespaces>
+ 
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>Products</strong>
+        </c-card-header>
+        <c-card-body>
+          <!-- <p class="text-medium-emphasis small">
+           There is list of all products.
+          </p> -->
+          <button type="button" cButton color="success" style="float: right;" data-coreui-toggle="modal" data-coreui-target="#exampleModal"> + Add </button>
+
+          <!-- <app-docs-example href="components/table"> -->
+            <table cTable>
+              <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let product of products; let i = index">
+              <tr>
+                <th scope="row">{{product.id }}</th>
+                <td>{{product.title}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                  <button cButton color="secondary">View</button>
+                  <button cButton color="warning">Edit</button>
+                  <button cButton color="danger">Delete</button>
+                </td>
+              </tr>
+             </tbody>
+            </table>
+          <!-- </app-docs-example> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+
+   </c-row>
+
+
+
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -29,9 +29,8 @@
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
                 <td>
-                  <button cButton color="secondary">View</button>
-                  <button cButton color="warning">Edit</button>
-                  <button cButton color="danger">Delete</button>
+                  <button cButton color="warning" [routerLink]="product.id">View/Edit</button>
+                  <button cButton color="danger" (click)="deleteProduct(product.id)">Delete</button>
                 </td>
               </tr>
              </tbody>

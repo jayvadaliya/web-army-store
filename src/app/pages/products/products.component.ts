@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit{
-  products:any;
+  
+  products:any[] = [];
+  selectedProduct: any;
 
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit(): void {
       this.products = [
@@ -35,9 +41,14 @@ export class ProductsComponent implements OnInit{
           description : 'vivobook',
           price : 31099
         }
-
       ]
   }
 
+  getProductDetail(productId: number) {
+    
+    }
 
+  deleteProduct(productId: number) {
+    this.products.splice(this.products.findIndex(x => x.id === productId), 1);
+  }
 }

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products.component';
-import {ProductRoutingModule} from './products-routing.module'
+import {ProductRoutingModule} from './products-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 // CoreUI Modules
@@ -34,11 +35,13 @@ import { IconModule } from '@coreui/icons-angular';
 
 // utils
 import { DocsComponentsModule } from '@docs-components/docs-components.module';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
   declarations: [
-    ProductsComponent
+    ProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
     IconModule,
@@ -68,7 +71,8 @@ import { DocsComponentsModule } from '@docs-components/docs-components.module';
     PopoverModule,
     TableModule,
     ProductRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ProductsModule { 
